@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة ترحيبية</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+
+    /* صفحة الترحيب */
+    .welcome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      font-size: 3rem;
+      text-transform: uppercase;
+      opacity: 1;
+      animation: textGlow 2s ease-in-out infinite alternate;
+    }
+
+    /* تأثير الوميض على النص */
+    @keyframes textGlow {
+      0% {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgba(255, 255, 255, 0.4);
+        opacity: 1;
+      }
+      50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.8);
+        opacity: 0.8;
+      }
+      100% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 1);
+        opacity: 1;
+      }
+    }
+
+    /* المحتوى الرئيسي */
+    .main-content {
+      display: none;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- صفحة الترحيب -->
+  <div class="welcome" id="welcome-screen">
+    أهلاً وسهلاً بكم!
+  </div>
+
+  <!-- المحتوى الرئيسي -->
+  <div class="main-content" id="main-content">
+    <h1>مرحبًا بك في موقعنا!</h1>
+    <p>نأمل أن تستمتع بتجربتك معنا.</p>
+  </div>
+
+  <script>
+    // إبقاء صفحة الترحيب لمدة 5 ثوانٍ ثم بدء الأنيميشن
+    setTimeout(() => {
+      // بدء أنيميشن صفحة الترحيب للاختفاء
+      document.getElementById('welcome-screen').style.opacity = '0';
+      
+      // عرض المحتوى الرئيسي مع الأنيميشن
+      setTimeout(() => {
+        document.getElementById('welcome-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('main-content').style.opacity = '1';
+          document.getElementById('main-content').style.transform = 'translateY(0)';
+        }, 100); // تأخير بسيط للتأكد من تنفيذ الأنيميشن بشكل سلس
+      }, 1000); // تأخير الأنيميشن الخاص بإخفاء صفحة الترحيب
+    }, 5000); // إبقاء صفحة الترحيب لمدة 5 ثوانٍ
+  </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header</title>
+  <style>
+    /* Basic Styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #03081d;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    padding: 10px;
+  font-size: 19px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* ظل */
+  backdrop-filter: blur(10px); /* تأثير التمويه */
+  -webkit-backdrop-filter: blur(10px); /* دعم لأنظمة ويب قديمة */
+  transition: 0.5s;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #945af5;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      background-color: #03081d;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.5s ease-in-out;
+    }
+
+    .nav.active {
+      display: flex;
+      max-height: 300px; /* Adjust height to fit menu items */
+    }
+
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav ul li {
+      text-align: center;
+      margin: 20px ;
+    }
+
+    header ul li a.activ{
+  transition: 0.5s;
+  color: #945af5;
+  font-weight: bold;
+}
+
+
+
+
+    .nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Large Screens Styles */
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+
+      .header {
+        flex-direction: row;
+      }
+
+      .nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        max-height: none;
+      }
+
+      .nav ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav ul li {
+        margin: 20px ;
+        font-size: 20px;
+      }
+
+      .nav ul li a {
+        font-size: 1rem;
+      }
+      header ul li a::before{
+        content: '';
+        height: 0;
+        width: 0;
+      }
+      header ul li a.activ::before{
+  width: 0;
+}
+      .header {
+        justify-content: space-between;
+      }
+
+      .logo {
+        margin-right: auto; /* Align logo to the left */
+      }
+
+      .nav {
+        margin-left: auto; /* Align links to the right */
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Ali</div>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav">
+      <ul>
+        <li ><a  class="activ" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <script>
+    // Select elements
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    // Add click event
+    menuToggle.addEventListener('click', () => {
+      // Toggle menu visibility
+      nav.classList.toggle('active');
+
+      // Toggle button icon
+      menuToggle.textContent = nav.classList.contains('active') ? '✖' : '☰';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+        }
+
+        .glass {
+            width: 300px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.2); /* شفافية */
+            border-radius: 15px; /* زوايا دائرية */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* ظل */
+            backdrop-filter: blur(10px); /* تأثير التمويه */
+            -webkit-backdrop-filter: blur(10px); /* دعم لأنظمة ويب قديمة */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* خط خارجي */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass">
+        This is Glassmorphism
+    </div>
+</body>
+</html>

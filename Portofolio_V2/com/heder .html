@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Menu</title>
+    <style>
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px;
+            background: #333;
+        }
+
+        /* الأيقونة */
+        .menu-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* عند التحويل إلى X */
+        .menu-icon.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-icon.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <script>
+        // جلب الزر
+        const menuIcon = document.getElementById('menuIcon');
+
+        // إضافة حدث النقر
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

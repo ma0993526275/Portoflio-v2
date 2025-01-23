@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Color Change with Glow Effect</title>
+  <style>
+    /* إعدادات الصفحة */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      margin: 30px;
+      font-size: 3rem;
+      font-weight: bold;
+      background: linear-gradient(45deg, #ff6ec7, #ff3f6c, #48c6ef, #6f86d6);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientAnimation 2s ease-in-out infinite, glow 1.5s ease-in-out infinite;
+    }
+
+    /* انيميشن لتحريك التدرج اللوني بشكل أسرع */
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* تأثير الإضاءة على النص */
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #ff6ec7, 0 0 10px #ff6ec7;
+      }
+      50% {
+        text-shadow: 0 0 8px #ff3f6c, 0 0 15px #ff3f6c;
+      }
+      100% {
+        text-shadow: 0 0 5px #48c6ef, 0 0 10px #48c6ef;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to My Website!</h1>
+
+</body>
+</html>
