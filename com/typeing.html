@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #typing-effect {
+      font-size: 30px;
+      border-right: 2px solid black;
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="typing-effect"></div>
+
+  <script>
+    const sentences = [
+      "Hello, this is the typing effect!",
+      "It changes between sentences.",
+      "The text keeps typing without stopping."
+    ];
+    let sentenceIndex = 0;
+    let charIndex = 0;
+    let typingInterval;
+
+    function typeText() {
+      if (charIndex < sentences[sentenceIndex].length) {
+        document.getElementById("typing-effect").innerText += sentences[sentenceIndex].charAt(charIndex);
+        charIndex++;
+      } else {
+        clearInterval(typingInterval); // إيقاف الكتابة بعد إتمام الجملة
+
+        setTimeout(() => {
+          sentenceIndex = (sentenceIndex + 1) % sentences.length; // الانتقال للجملة التالية
+          charIndex = 0; // إعادة تعيين مؤشر الحروف
+          document.getElementById("typing-effect").innerText = ""; // مسح النص الحالي
+          typingInterval = setInterval(typeText, 100); // إعادة بدء الكتابة للجملة التالية
+        }, 1000); // الانتظار لمدة ثانية بعد الانتهاء من الجملة
+      }
+    }
+
+    typingInterval = setInterval(typeText, 100); // بدء الكتابة في الجملة الأولى
+  </script>
+
+</body>
+</html>

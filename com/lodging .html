@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loader Example</title>
+  <style>
+    /* مؤشر التحميل */
+    .loader {
+      width: 45px;
+      aspect-ratio: 1;
+      --c: no-repeat linear-gradient(#000 calc(50% - 10px),#0000 0 calc(50% + 10px),#000 0);
+      background: 
+        var(--c) 0%   100%,
+        var(--c) 50%  100%,
+        var(--c) 100% 100%;
+      background-size: 20% calc(200% + 20px);
+      animation: l4 1s infinite linear;
+    }
+
+    /* حركة المؤشر */
+    @keyframes l4 {
+        33%  {background-position: 0% 50%,50% 100%,100% 100%}
+        50%  {background-position: 0%  0%,50%  50%,100% 100%}
+        66%  {background-position: 0%  0%,50%   0%,100%  50%}
+        100% {background-position: 0%  0%,50%   0%,100%   0%}
+    }
+
+    /* محاذاة المؤشر في منتصف الصفحة */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="loader"></div>
+  </div>
+</body>
+</html>

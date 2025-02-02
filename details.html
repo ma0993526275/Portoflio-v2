@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!----------------FontAwesome Library ------------->
+  <link rel="stylesheet" href="style/all.min.css">
+
+  <link rel="stylesheet" href="style/main.css">
+
+  <title>صفحة ترحيبية</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Ali</div>
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="nav">
+          <ul>
+            <li ><a  href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a  class="activ" href="#Projects">Projects</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+          <div class="link-details">
+             <a href="index.html">Back</a>
+             <span>Project</span>
+             <span>stor-App</span>
+          </div>
+        <div class="details">
+            <div class="right">
+                <h1>StorApp - Details </h1>
+                <div class="info">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dignissimos atque voluptatum ducimus. Labore vero quae suscipit velit, quibusdam repellat illo deserunt minima autem quis dolorem assumenda architecto totam? At.</p>
+                </div>
+                <div class="totol glass">
+                    <div class="por glass">
+                        <i class="fa-solid fa-microchip"></i>
+                        <div class="icon">
+                            <span>9</span>
+                            <span class="text">totol technologies</span>
+                        </div>
+                    </div>
+                    <div class="por glass">
+                        <i class="fa-solid fa-pager"></i>
+                        <div class="icon">
+                            <span>11</span>
+                            <span class="text">totol  pages</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="technologies">technologies Used</span>
+                <div class="lang">
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+                    <span class="glass">html</span>
+           
+                </div>
+            </div>
+            <div class="left">
+                <div class="img glass"><img src="images/Project/por1.jpeg" alt="Project"></div>
+                <div class="key glass">
+                    <h2>include Project</h2>
+                    <div class="info">
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis ab voluptatibus odio.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <script>
+                 // Select elements
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    // Add click event
+    menuToggle.addEventListener('click', () => {
+      // Toggle menu visibility
+      nav.classList.toggle('active');
+
+      // Toggle button icon
+      menuToggle.textContent = nav.classList.contains('active') ? '✖' : '☰';
+    });
+      </script>
+</body>
