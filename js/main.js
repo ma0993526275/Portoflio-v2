@@ -1,20 +1,20 @@
 //================ welcome page ======================//
   
-  // إبقاء صفحة الترحيب لمدة 5 ثوانٍ ثم بدء الأنيميشن
-    setTimeout(() => {
-        // بدء أنيميشن صفحة الترحيب للاختفاء
-        document.getElementById('welcome-screen').style.opacity = '0';
+  // // إبقاء صفحة الترحيب لمدة 5 ثوانٍ ثم بدء الأنيميشن
+  //   setTimeout(() => {
+  //       // بدء أنيميشن صفحة الترحيب للاختفاء
+  //       document.getElementById('welcome-screen').style.opacity = '0';
         
-        // عرض المحتوى الرئيسي مع الأنيميشن
-        setTimeout(() => {
-          document.getElementById('welcome-screen').style.display = 'none';
-          document.getElementById('page').style.display = 'block';
-          setTimeout(() => {
-            document.getElementById('page').style.opacity = '1';
-            document.getElementById('page').style.transform = 'translateY(0)';
-          }, 100); // تأخير بسيط للتأكد من تنفيذ الأنيميشن بشكل سلس
-        }, 1000); // تأخير الأنيميشن الخاص بإخفاء صفحة الترحيب
-      }, 2000); // إبقاء صفحة الترحيب لمدة 5 ثوانٍ
+  //       // عرض المحتوى الرئيسي مع الأنيميشن
+  //       setTimeout(() => {
+  //         document.getElementById('welcome-screen').style.display = 'none';
+  //         document.getElementById('page').style.display = 'block';
+  //         setTimeout(() => {
+  //           document.getElementById('page').style.opacity = '1';
+  //           document.getElementById('page').style.transform = 'translateY(0)';
+  //         }, 100); // تأخير بسيط للتأكد من تنفيذ الأنيميشن بشكل سلس
+  //       }, 1000); // تأخير الأنيميشن الخاص بإخفاء صفحة الترحيب
+  //     }, 2000); // إبقاء صفحة الترحيب لمدة 5 ثوانٍ
 
 
 //================ Header page ======================//
